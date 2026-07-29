@@ -1,0 +1,41 @@
+{
+  "name": "nodejs-app",
+  "version": "1.0.0",
+  "description": "Challenge application in Node.js",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --dns-result-order=ipv4first src/index.js",
+    "dev": "nodemon --dns-result-order=ipv4first src/index.js",
+    "lint": "eslint src/. --cache --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariolargo/nodejs-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/mariolargo/nodejs-app/issues"
+  },
+  "homepage": "https://github.com/mariolargo/nodejs-app#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "redis": "^6.1.0",
+    "response-time": "^2.3.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "globals": "^17.8.0",
+    "jest": "^25.0.0",
+    "prettier": "^3.9.6"
+  }
+}
