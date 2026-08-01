@@ -35,6 +35,6 @@ pool.getConnection((err, connection) => {
 
 // Convert to promises standard callbacks queries
 // Alternative: use mysql2 driver (Promise/async-await based).
-pool.query = promisify(pool.query)
+pool.query = promisify(pool.query).bind(pool)
 
 export default pool
