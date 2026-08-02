@@ -20,6 +20,7 @@ describe('Character Routes Testing', () => {
     expect(response.statusCode).toBe(200)
     expect(response.body).toHaveProperty('name')
     expect(response.body).toHaveProperty('status')
+    expect(response.body.name).toBe('Rick Sanchez')
   })
 
   afterAll(async () => {
