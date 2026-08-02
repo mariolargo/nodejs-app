@@ -1,8 +1,9 @@
-name: CI Release Workflow
+name: "CI Release Workflow"
 on:
   workflow_run:
     workflows: ["CI Test Workflow"]
-    types: [completed]
+    types:
+      - completed
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
