@@ -1,11 +1,6 @@
 import express from 'express'
 import responseTime from 'response-time'
-import { createClient } from 'redis'
-
-const client = await createClient({
-  host: '127.0.0.1',
-  port: 6379,
-}).connect()
+import client from './redisClient.js'
 
 client.on('error', (error) => {
   console.error(error)
@@ -60,6 +55,4 @@ app.get('/character/:id', async (req, res) => {
   }
 })
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000')
-})
+export default app
