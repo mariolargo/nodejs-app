@@ -1,0 +1,25 @@
+name: Semantic Release
+on:
+  push:
+    branches:
+      - develop
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed for pushing tags
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required to parse git history
+      - name: Install Dependencies
+        run: cd backend && npm ci
+      - name: Run Semantic Release
+        run: cd backend && npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
