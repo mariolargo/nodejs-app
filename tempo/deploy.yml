@@ -2,9 +2,8 @@ name: CD - Elastic Beanstalk Production
 
 on:
   push:
-    #branches:
-    #  - develop
-    tags: ["v*.*.*"]
+    tags:
+      - "v*.*.*"
 
 env:
   AWS_REGION: us-east-1
